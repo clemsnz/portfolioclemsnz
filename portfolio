@@ -1,0 +1,49 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Instagram, Linkedin } from "lucide-react";
+
+export default function ClemsnzPortfolio() {
+  return (
+    <div className="min-h-screen bg-pink-50 text-gray-800 font-sans">
+      <header className="p-6 text-center bg-white shadow-md">
+        <h1 className="text-4xl font-bold">clemsnzportfolio</h1>
+        <p className="mt-2 text-lg text-gray-600">Créative, passionnée, curieuse.</p>
+      </header>
+
+      <section className="p-8 max-w-5xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Mes projets</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3, 4, 5, 6].map((n) => (
+            <Card key={n} className="hover:shadow-xl transition-shadow">
+              <CardContent className="p-4">
+                <img
+                  src={`https://source.unsplash.com/400x300/?design,creative,${n}`}
+                  alt="Projet visuel"
+                  className="rounded-xl mb-4"
+                />
+                <h3 className="text-xl font-medium">Projet {n}</h3>
+                <p className="text-sm text-gray-500 mt-2">
+                  Une courte description de ce projet pour mettre en valeur la créativité et la polyvalence.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-12 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Contact</h2>
+        <p className="text-gray-600 mb-6">Tu veux collaborer avec moi ? Écris-moi ou retrouve-moi sur les réseaux !</p>
+        <div className="flex justify-center gap-6">
+          <a href="mailto:clemsnz@email.com" className="hover:text-pink-600"><Mail size={28} /></a>
+          <a href="https://instagram.com/clemsnz" className="hover:text-pink-600"><Instagram size={28} /></a>
+          <a href="https://linkedin.com/in/clemsnz" className="hover:text-pink-600"><Linkedin size={28} /></a>
+        </div>
+      </section>
+
+      <footer className="text-center text-sm text-gray-500 py-4">
+        © 2025 clemsnzportfolio — Tous droits réservés
+      </footer>
+    </div>
+  );
+}
